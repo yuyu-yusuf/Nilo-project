@@ -1,0 +1,218 @@
+/* ===== WHOLE PAGE ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0b1f;        /* CHANGE: dark background */
+  color: white;
+}
+
+/* Big titles use the Anton font */
+h1, h2, h3, .logo, .can {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Colourful gradient text (used on some words) */
+.gradient {
+  background: linear-gradient(90deg, #ff4f7b, #ffb703);   /* CHANGE: the 2 colours */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== NAVIGATION BAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+}
+
+.logo {
+  font-size: 36px;
+  color: #ff4f7b;                   /* CHANGE: logo colour */
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.menu a:hover {
+  color: #ffb703;
+}
+
+.nav-button {
+  background-color: #ff4f7b;
+  padding: 10px 22px;
+  border-radius: 30px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;                    /* text and cans side by side */
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 50px 100px;
+  /* two coloured glows in the background */
+  background: radial-gradient(circle at 80% 50%, #ff4f7b55, transparent 40%),
+              radial-gradient(circle at 10% 90%, #2ec4a655, transparent 40%);
+}
+
+.small-tag {
+  color: #2ec4a6;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: 110px;                 /* CHANGE: title size */
+  line-height: 1;
+  margin: 10px 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #cccccc;
+}
+
+/* ===== BUTTON ===== */
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 40px;
+  background: linear-gradient(90deg, #ff4f7b, #ffb703);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: 0 0 30px #ff4f7b;     /* glow */
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+/* ===== CANS ===== */
+.cans {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.can {
+  width: 120px;
+  height: 240px;
+  border-radius: 25px;
+  display: flex;                    /* centre the text */
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  writing-mode: vertical-rl;        /* vertical text */
+  border-top: 12px solid #cccccc;   /* silver lid */
+  animation: float 3s infinite;     /* makes the cans float */
+}
+
+.big {
+  width: 150px;
+  height: 300px;
+  animation-delay: 0.5s;            /* floats at a different time */
+}
+
+/* The floating movement: up and down */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+/* Colours used for cans AND cards — CHANGE these */
+.pink   { background: linear-gradient(#ff4f7b, #a0103f); box-shadow: 0 0 40px #ff4f7b88; }
+.orange { background: linear-gradient(#ffb703, #ff6d00); box-shadow: 0 0 40px #ffb70388; }
+.green  { background: linear-gradient(#5ee7c6, #128a6e); box-shadow: 0 0 40px #2ec4a688; }
+
+/* ===== MOVING BAND ===== */
+.band {
+  background-color: #ffb703;
+  color: #0d0b1f;
+  overflow: hidden;                 /* hide text outside the band */
+  white-space: nowrap;              /* keep text on one line */
+  transform: rotate(-2deg);         /* slightly tilted */
+}
+
+.band p {
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  margin: 12px 0;
+  animation: move 12s linear infinite;
+}
+
+/* The text slides from right to left */
+@keyframes move {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  text-align: center;
+  padding: 100px 50px;
+}
+
+h2 {
+  font-size: 70px;
+  margin: 0 0 50px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 50px 20px;
+  border-radius: 30px;
+}
+
+.card h3 {
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+
+.card:hover, .box:hover {
+  transform: translateY(-10px) rotate(-3deg);   /* jumps and tilts on hover */
+}
+
+/* Glass boxes in "Why NILO" */
+.box {
+  width: 250px;
+  padding: 30px 20px;
+  border-radius: 30px;
+  background-color: #ffffff15;      /* see-through white */
+  border: 1px solid #ffffff30;
+}
+
+.box h3 {
+  font-size: 50px;
+  margin: 0;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #ffffff30;
+  color: #999999;
+}
+
+/* ===== PHONE SCREENS ===== */
+@media (max-width: 800px) {
+  .hero    { flex-direction: column; text-align: center; }
+  .hero h1 { font-size: 60px; }
+  .menu    { display: none; }
+  h2       { font-size: 44px; }
+}
